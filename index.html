@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Varpop Review System</title>
+    <link rel="stylesheet" type="text/css" href="css/minireset.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+  <header>
+  	<div id="logo">
+  		<img  src="images/logo.jpg"/>
+  	</div>
+  	<div id="headline"></div>
+  	<div id="description">
+  		<p style="text-align:center;margin-top:50px;">We'd love your feedback! Click on the emoticon that best describes your experience below!</p>
+  	</div>
+  </header>
+    <main>
+    	<div class="trigger" id="happy">
+    		<img src="images/happy.png"/>
+    		<p>I loved it!</p>
+    	</div>
+    	<div class="unamused-trigger" id="unamused">
+    		<img src="images/unamused.png"/>
+    		<p>It was ok!</p>
+    	</div>
+    	<div class="unhappy-trigger" id="unhappy">
+    		<img src="images/unhappy.png">
+    		<p>I hated it!</p>
+    	</div>
+    	<!-- Happy Pop-up Module 
+    	
+    	<div id="happymodule"></div>
+    	
+    	-->
+    	<!-- Unamused & Unhappy Pop-up Module 
+    	
+    	<div id="unhappyform"></div>
+    	
+    	-->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h1>Hello, I am a happy modal!</h1>
+        </div>
+    </div>
+    <div class="unhappy-modal">
+        <div class="unhappy-modal-content">
+            <span class="unhappy-close-button">&times;</span>
+            <h1>Hello, I am an unhappy modal!</h1>
+        </div>
+    </div>
+    <div class="unamused-modal">
+        <div class="unamused-modal-content">
+            <span class="unamused-close-button">&times;</span>
+            <h1>Hello, I am an unamused modal!</h1>
+        </div>
+    </div>
+    </main>
+    <footer>
+    </footer>
+    <script>
+    		var modal = document.querySelector(".modal");
+    var trigger = document.querySelector(".trigger");
+    var closeButton = document.querySelector(".close-button");
+    var happyDiv = document.querySelector("#happy");
+
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    happyDiv.addEventListener("click", windowOnClick);
+    
+    var unhappyModal = document.querySelector(".unhappy-modal");
+    var unhappyTrigger = document.querySelector(".unhappy-trigger");
+    var unhappyClosebutton = document.querySelector(".unhappy-close-button");
+    var unhappyDiv = document.querySelector("#unhappy");
+
+    function unhappyToggleModal() {
+        unhappyModal.classList.toggle("show-modal");
+    }
+
+    function unhappyBtnOnClick(event) {
+        if (event.target === unhappyModal) {
+            unhappyToggleModal();
+        }
+    }
+
+    unhappyTrigger.addEventListener("click", unhappyToggleModal);
+    unhappyClosebutton.addEventListener("click", unhappyToggleModal);
+    
+    var unamusedModal = document.querySelector(".unamused-modal");
+    var unamusedTrigger = document.querySelector(".unamused-trigger");
+    var unamusedClosebutton = document.querySelector(".unamused-close-button");
+    var unamusedDiv = document.querySelector("#unamused");
+
+    function unamusedToggleModal() {
+        unamusedModal.classList.toggle("show-modal");
+    }
+
+    function unamusedBtnOnClick(event) {
+        if (event.target === unamusedModal) {
+            unamusedToggleModal();
+        }
+    }
+
+    unamusedTrigger.addEventListener("click", unamusedToggleModal);
+    unamusedClosebutton.addEventListener("click", unamusedToggleModal);
+    
+
+    </script>
+    
+  </body>
+</html>
